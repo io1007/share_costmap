@@ -1,0 +1,10 @@
+[35m[1mScanning dependencies of target tf_listener[0m
+make[2]: *** No rule to make target 'CMakeFiles/tf_broadcaster.dir/build'.  Stop.
+CMakeFiles/Makefile2:104: recipe for target 'CMakeFiles/tf_broadcaster.dir/all' failed
+make[1]: *** [CMakeFiles/tf_broadcaster.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[ 50%] [32mBuilding CXX object CMakeFiles/tf_listener.dir/src/tf_listener.cpp.o[0m
+[100%] [32m[1mLinking CXX executable /home/ubuntu/catkin_ws/devel/.private/sonar_test/lib/sonar_test/tf_listener[0m
+[100%] Built target tf_listener
+Makefile:140: recipe for target 'all' failed
+make: *** [all] Error 2

@@ -1,0 +1,15 @@
+[31m[1mCMake Error[0m at /opt/ros/melodic/share/catkin/cmake/catkinConfig.cmake:83 (find_package):
+  Could not find a package configuration file provided by "roslint" with any
+  of the following names:
+
+    roslintConfig.cmake
+    roslint-config.cmake
+
+  Add the installation prefix of "roslint" to CMAKE_PREFIX_PATH or set
+  "roslint_DIR" to a directory containing one of the above files.  If
+  "roslint" provides a separate development package or SDK, be sure it has
+  been installed.
+[36mCall Stack (most recent call first):[0m
+  CMakeLists.txt:41 (find_package)
+
+

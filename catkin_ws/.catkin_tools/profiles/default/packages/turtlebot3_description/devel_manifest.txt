@@ -1,0 +1,5 @@
+turtlebot3/turtlebot3_description
+/home/ubuntu/catkin_ws/devel/.private/turtlebot3_description/cmake.lock /home/ubuntu/catkin_ws/devel/./cmake.lock
+/home/ubuntu/catkin_ws/devel/.private/turtlebot3_description/lib/pkgconfig/turtlebot3_description.pc /home/ubuntu/catkin_ws/devel/lib/pkgconfig/turtlebot3_description.pc
+/home/ubuntu/catkin_ws/devel/.private/turtlebot3_description/share/turtlebot3_description/cmake/turtlebot3_descriptionConfig-version.cmake /home/ubuntu/catkin_ws/devel/share/turtlebot3_description/cmake/turtlebot3_descriptionConfig-version.cmake
+/home/ubuntu/catkin_ws/devel/.private/turtlebot3_description/share/turtlebot3_description/cmake/turtlebot3_descriptionConfig.cmake /home/ubuntu/catkin_ws/devel/share/turtlebot3_description/cmake/turtlebot3_descriptionConfig.cmake

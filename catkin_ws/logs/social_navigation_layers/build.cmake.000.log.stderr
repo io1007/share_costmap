@@ -1,0 +1,15 @@
+[31m[1mCMake Error[0m at /opt/ros/melodic/share/catkin/cmake/catkinConfig.cmake:83 (find_package):
+  Could not find a package configuration file provided by "people_msgs" with
+  any of the following names:
+
+    people_msgsConfig.cmake
+    people_msgs-config.cmake
+
+  Add the installation prefix of "people_msgs" to CMAKE_PREFIX_PATH or set
+  "people_msgs_DIR" to a directory containing one of the above files.  If
+  "people_msgs" provides a separate development package or SDK, be sure it
+  has been installed.
+[36mCall Stack (most recent call first):[0m
+  CMakeLists.txt:5 (find_package)
+
+

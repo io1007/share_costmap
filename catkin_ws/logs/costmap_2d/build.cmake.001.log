@@ -1,0 +1,34 @@
+Not searching for unused variables given on the command line.
+[36m--[0m Using CATKIN_DEVEL_PREFIX: /home/ubuntu/catkin_ws/devel/.private/costmap_2d
+[36m--[0m Using CMAKE_PREFIX_PATH: /home/ubuntu/catkin_ws/devel;/opt/ros/melodic
+[36m--[0m This workspace overlays: /home/ubuntu/catkin_ws/devel;/opt/ros/melodic
+[36m--[0m Found PythonInterp: /usr/bin/python2 (found suitable version "2.7.17", minimum required is "2")
+[36m--[0m Using PYTHON_EXECUTABLE: /usr/bin/python2
+[36m--[0m Using Debian Python package layout
+[36m--[0m Using empy: /usr/bin/empy
+[36m--[0m Using CATKIN_ENABLE_TESTING: ON
+[36m--[0m Call enable_testing()
+[36m--[0m Using CATKIN_TEST_RESULTS_DIR: /home/ubuntu/catkin_ws/build/costmap_2d/test_results
+[36m--[0m Found gtest sources under '/usr/src/googletest': gtests will be built
+[36m--[0m Found gmock sources under '/usr/src/googletest': gmock will be built
+[36m--[0m Found PythonInterp: /usr/bin/python2 (found version "2.7.17")
+[36m--[0m Using Python nosetests: /usr/bin/nosetests-2.7
+[36m--[0m catkin 0.7.29
+[36m--[0m BUILD_SHARED_LIBS is on
+[36m--[0m Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+[31m[1mCMake Error[0m at /home/ubuntu/catkin_ws/devel/share/voxel_grid/cmake/voxel_gridConfig.cmake:113 (message):
+  Project 'voxel_grid' specifies
+  '/home/ubuntu/catkin_ws/src/navigation/voxel_grid/include' as an include
+  dir, which is not found.  It does neither exist as an absolute directory
+  nor in
+  '/home/ubuntu/catkin_ws/src/navigation/voxel_grid//home/ubuntu/catkin_ws/src/navigation/voxel_grid/include'.
+  Check the website 'http://wiki.ros.org/voxel_grid' for information and
+  consider reporting the problem.
+[36mCall Stack (most recent call first):[0m
+  /opt/ros/melodic/share/catkin/cmake/catkinConfig.cmake:76 (find_package)
+  CMakeLists.txt:4 (find_package)
+
+
+[36m--[0m Configuring incomplete, errors occurred!
+See also "/home/ubuntu/catkin_ws/build/costmap_2d/CMakeFiles/CMakeOutput.log".
+See also "/home/ubuntu/catkin_ws/build/costmap_2d/CMakeFiles/CMakeError.log".

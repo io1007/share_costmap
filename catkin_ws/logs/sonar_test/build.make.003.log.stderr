@@ -1,0 +1,10 @@
+make[2]: *** No rule to make target 'CMakeFiles/tf_broadcaster.dir/build'.  Stop.
+make[1]: *** [CMakeFiles/tf_broadcaster.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[01m[K/home/ubuntu/catkin_ws/src/turtlebot_sonar/sonar_test/src/tf_listener.cpp:3:10:[m[K [01;31m[Kfatal error: [m[Ksensor_msgs/Range: No such file or directory
+ #include [01;31m[K<sensor_msgs/Range>[m[K
+          [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+make[2]: *** [CMakeFiles/tf_listener.dir/src/tf_listener.cpp.o] Error 1
+make[1]: *** [CMakeFiles/tf_listener.dir/all] Error 2
+make: *** [all] Error 2

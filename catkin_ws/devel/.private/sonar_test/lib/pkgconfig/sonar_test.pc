@@ -1,0 +1,8 @@
+prefix=/home/ubuntu/catkin_ws/devel/.private/sonar_test
+
+Name: sonar_test
+Description: Description of sonar_test
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

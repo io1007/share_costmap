@@ -1,0 +1,56 @@
+make[2]: *** No rule to make target 'CMakeFiles/tf_broadcaster.dir/build'.  Stop.
+make[1]: *** [CMakeFiles/tf_broadcaster.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[01m[K/home/ubuntu/catkin_ws/src/turtlebot_sonar/sonar_test/src/tf_listener.cpp:[m[K In function ‘[01m[Kvoid transformPoint(const tf::TransformListener&)[m[K’:
+[01m[K/home/ubuntu/catkin_ws/src/turtlebot_sonar/sonar_test/src/tf_listener.cpp:13:3:[m[K [01;31m[Kerror: [m[K‘[01m[Ksoanr_point[m[K’ was not declared in this scope
+   [01;31m[Ksoanr_point[m[K.header.stamp = ros::Time();
+   [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/ubuntu/catkin_ws/src/turtlebot_sonar/sonar_test/src/tf_listener.cpp:13:3:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[Ksonar_point[m[K’
+   [01;36m[Ksoanr_point[m[K.header.stamp = ros::Time();
+   [01;36m[K^~~~~~~~~~~[m[K
+   [32m[Ksonar_point[m[K
+[01m[K/home/ubuntu/catkin_ws/src/turtlebot_sonar/sonar_test/src/tf_listener.cpp:20:65:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Ktf::TransformListener::transformPoint(const char [10], sensor_msgs::Range&, geometry_msgs::PointStamped&) const[m[K’
+     listener.transformPoint("base_link", sonar_point, base_point[01;31m[K)[m[K;
+                                                                 [01;31m[K^[m[K
+In file included from [01m[K/home/ubuntu/catkin_ws/src/turtlebot_sonar/sonar_test/src/tf_listener.cpp:4:0[m[K:
+[01m[K/opt/ros/melodic/include/tf/transform_listener.h:102:8:[m[K [01;36m[Knote: [m[Kcandidate: void tf::TransformListener::transformPoint(const string&, const PointStamped&, geometry_msgs::PointStamped&) const
+   void [01;36m[KtransformPoint[m[K(const std::string& target_frame, const geometry_msgs::PointStamped& stamped_in, geometry_msgs::PointStamped& stamped_out) const;
+        [01;36m[K^~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/tf/transform_listener.h:102:8:[m[K [01;36m[Knote: [m[K  no known conversion for argument 2 from ‘[01m[Ksensor_msgs::Range {aka sensor_msgs::Range_<std::allocator<void> >}[m[K’ to ‘[01m[Kconst PointStamped& {aka const geometry_msgs::PointStamped_<std::allocator<void> >&}[m[K’
+[01m[K/opt/ros/melodic/include/tf/transform_listener.h:124:8:[m[K [01;36m[Knote: [m[Kcandidate: void tf::TransformListener::transformPoint(const string&, const ros::Time&, const PointStamped&, const string&, geometry_msgs::PointStamped&) const
+   void [01;36m[KtransformPoint[m[K(const std::string& target_frame, const ros::Time& target_time,
+        [01;36m[K^~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/tf/transform_listener.h:124:8:[m[K [01;36m[Knote: [m[K  candidate expects 5 arguments, 3 provided
+In file included from [01m[K/opt/ros/melodic/include/tf/transform_listener.h:38:0[m[K,
+                 from [01m[K/home/ubuntu/catkin_ws/src/turtlebot_sonar/sonar_test/src/tf_listener.cpp:4[m[K:
+[01m[K/opt/ros/melodic/include/tf/tf.h:279:8:[m[K [01;36m[Knote: [m[Kcandidate: void tf::Transformer::transformPoint(const string&, const ros::Time&, const tf::Stamped<tf::Vector3>&, const string&, tf::Stamped<tf::Vector3>&) const
+   void [01;36m[KtransformPoint[m[K(const std::string& target_frame, const ros::Time& target_time,
+        [01;36m[K^~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/tf/tf.h:279:8:[m[K [01;36m[Knote: [m[K  candidate expects 5 arguments, 3 provided
+[01m[K/opt/ros/melodic/include/tf/tf.h:260:8:[m[K [01;36m[Knote: [m[Kcandidate: void tf::Transformer::transformPoint(const string&, const tf::Stamped<tf::Vector3>&, tf::Stamped<tf::Vector3>&) const
+   void [01;36m[KtransformPoint[m[K(const std::string& target_frame, const Stamped<tf::Point>& stamped_in, Stamped<tf::Point>& stamped_out) const;
+        [01;36m[K^~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/tf/tf.h:260:8:[m[K [01;36m[Knote: [m[K  no known conversion for argument 2 from ‘[01m[Ksensor_msgs::Range {aka sensor_msgs::Range_<std::allocator<void> >}[m[K’ to ‘[01m[Kconst tf::Stamped<tf::Vector3>&[m[K’
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:40:0[m[K,
+                 from [01m[K/home/ubuntu/catkin_ws/src/turtlebot_sonar/sonar_test/src/tf_listener.cpp:1[m[K:
+[01m[K/home/ubuntu/catkin_ws/src/turtlebot_sonar/sonar_test/src/tf_listener.cpp:23:38:[m[K [01;31m[Kerror: [m[K‘[01m[Kgeometry_msgs::PointStamped {aka struct geometry_msgs::PointStamped_<std::allocator<void> >}[m[K’ has no member named ‘[01m[Krange[m[K’
+         sonar_point.range,base_point.[01;31m[Kr[m[Kange, base_point.header.stamp.toSec());
+                                      [01;31m[K^[m[K
+[01m[K/opt/ros/melodic/include/ros/console.h:348:165:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[KROSCONSOLE_PRINT_AT_LOCATION_WITH_FILTER[m[K’
+     ::ros::console::print(filter, __rosconsole_define_location__loc.logger_, __rosconsole_define_location__loc.level_, __FILE__, __LINE__, __ROSCONSOLE_FUNCTION__, [01;36m[K__VA_ARGS__[m[K)
+                                                                                                                                                                     [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/console.h:387:7:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROSCONSOLE_PRINT_AT_LOCATION[m[K’
+       [01;36m[KROSCONSOLE_PRINT_AT_LOCATION[m[K(__VA_ARGS__); \
+       [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/console.h:572:35:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_LOG_COND[m[K’
+ #define ROS_LOG(level, name, ...) [01;36m[KROS_LOG_COND[m[K(true, level, name, __VA_ARGS__)
+                                   [01;36m[K^~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/rosconsole/macros_generated.h:110:23:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_LOG[m[K’
+ #define ROS_INFO(...) [01;36m[KROS_LOG[m[K(::ros::console::levels::Info, ROSCONSOLE_DEFAULT_NAME, __VA_ARGS__)
+                       [01;36m[K^~~~~~~[m[K
+[01m[K/home/ubuntu/catkin_ws/src/turtlebot_sonar/sonar_test/src/tf_listener.cpp:22:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_INFO[m[K’
+     [01;36m[KR[m[KOS_INFO("base_sonar: (%.2f) -----> base_link: (%.2f) at time %.2f",
+     [01;36m[K^[m[K
+make[2]: *** [CMakeFiles/tf_listener.dir/src/tf_listener.cpp.o] Error 1
+make[1]: *** [CMakeFiles/tf_listener.dir/all] Error 2
+make: *** [all] Error 2

@@ -1,0 +1,13 @@
+[31m[1mCMake Error[0m at /home/ubuntu/catkin_ws/devel/share/voxel_grid/cmake/voxel_gridConfig.cmake:113 (message):
+  Project 'voxel_grid' specifies
+  '/home/ubuntu/catkin_ws/src/navigation/voxel_grid/include' as an include
+  dir, which is not found.  It does neither exist as an absolute directory
+  nor in
+  '/home/ubuntu/catkin_ws/src/navigation/voxel_grid//home/ubuntu/catkin_ws/src/navigation/voxel_grid/include'.
+  Check the website 'http://wiki.ros.org/voxel_grid' for information and
+  consider reporting the problem.
+[36mCall Stack (most recent call first):[0m
+  /opt/ros/melodic/share/catkin/cmake/catkinConfig.cmake:76 (find_package)
+  CMakeLists.txt:4 (find_package)
+
+
