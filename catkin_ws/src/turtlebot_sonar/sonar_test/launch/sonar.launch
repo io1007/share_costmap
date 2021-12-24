@@ -1,0 +1,5 @@
+<launch>
+  <node pkg="sonar_test" type="hssr_04.py" name="hssr_04" output="screen" />
+  <node pkg="tf" type="static_transform_publisher" name="robot_to_sensor" args="0.03 0 0.130 0 0 0 base_link base_sonar 100" />
+
+</launch>
