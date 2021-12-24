@@ -1,0 +1,29 @@
+obstacle_range: 3.0
+raytrace_range: 3.5
+
+
+footprint: [[-0.105, -0.105], [-0.105, 0.105], [0.041, 0.105], [0.041, -0.105]]
+
+inflation_radius: 1.0
+cost_scaling_factor: 3.0
+always_send_full_costmap: false
+
+map_type: costmap
+plugins:
+  - {name: obstacles, type: "costmap_2d::ObstacleLayer"}
+  - {name: sonar, type: "range_sensor_layer::RangeSensorLayer"}
+  - {name: inflation_layer, type: "costmap_2d::InflationLayer"}
+
+inflation_layer:
+  inflation_radius: 0.55
+
+sonar:
+  ns: "/tb3_0"
+  topics: ["/ultrasound"]
+  clear_on_max_reading: true
+  clear_threshold: 0.4
+  mark_threshold: 0.9
+
+obstacles:
+  observation_sources: scan
+  scan: {sensor_frame: tb3_0/base_scan, data_type: LaserScan, topic: /tb3_0/scan, marking: true, clearing: true,obstacle_range: 3.0, raytrace_range: 3.5}

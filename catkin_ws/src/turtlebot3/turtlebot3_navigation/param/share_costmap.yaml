@@ -1,0 +1,34 @@
+global_frame: tb3_0/map
+robot_base_frame: tb3_0/base_footprint
+obstacle_range: 3.0
+raytrace_range: 3.5
+
+update_frequency: 5.0
+publish_frequency: 5.0
+transform_tolerance: 0.5
+
+footprint: [[-0.105, -0.105], [-0.105, 0.105], [0.041, 0.105], [0.041, -0.105]]
+
+cost_scaling_factor: 3.0
+always_send_full_costmap: false
+map_type: costmap
+plugins:
+  - {name: static_map, type: "costmap_2d::StaticLayer"}
+  - {name: obstacles, type: "costmap_2d::ObstacleLayer"}
+  - {name: sonar, type: "range_sensor_layer::RangeSensorLayer"}
+
+static_map:
+        first_map_only: true
+share_map:
+        map_topic: map
+        use_maximum: true
+sonar:
+  ns: "/tb3_0"
+  topics: ["/ultrasound"]
+  clear_on_max_reading: true
+  clear_threshold: 0.4
+  mark_threshold: 0.9
+
+obstacles:
+  observation_sources: scan
+  scan: {sensor_frame: tb3_0/base_scan, data_type: LaserScan, topic: /tb3_0/scan, marking: true, clearing: true}

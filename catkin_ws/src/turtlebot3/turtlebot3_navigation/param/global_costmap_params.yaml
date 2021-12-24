@@ -1,0 +1,25 @@
+global_costmap:
+  global_frame: tb3_0/map
+  robot_base_frame: tb3_0/base_footprint
+
+  #update_frequency: 10.0
+  update_frequency: 5.0
+  #publish_frequency: 10.0
+  publish_frequency: 5.0
+  transform_tolerance: 0.5
+
+  #static_map: true
+  plugins:
+          - {name: static_map, type: "costmap_2d::StaticLayer"}
+            #- {name: share_map, type: "costmap_2d::StaticLayer"}
+          - {name: obstacles, type: "costmap_2d::ObstacleLayer"}
+          - {name: sonar, type: "range_sensor_layer::RangeSensorLayer"}
+          - {name: inflation_layer, type: "costmap_2d::InflationLayer"}
+
+  static_map:
+          map_topic: map
+          #first_map_only: true
+  share_map:
+          map_topic: map
+          use_maximum: true
+  

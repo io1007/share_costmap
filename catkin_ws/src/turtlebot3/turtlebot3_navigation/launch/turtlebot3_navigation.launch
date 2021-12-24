@@ -1,0 +1,37 @@
+<launch>
+  <!-- Arguments -->
+  <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
+  <!-- arg name="map_file" default="$(find turtlebot3_navigation)/maps/map.yaml"/ -->
+  <arg name="map_file" default="$(env HOME)/my_map.yaml"/>
+  <arg name="open_rviz" default="true"/>
+  <arg name="move_forward_only" default="false"/>
+  <arg name="first_tb3" default="tb3_0"/>
+
+  <!-- Turtlebot3 -->
+  <group ns="$(arg first_tb3)">
+    <include file="$(find turtlebot3_bringup)/launch/turtlebot3_remote.launch" >
+      <arg name="model" value="$(arg model)" />
+    </include>
+    <!-- Map server -->
+    <!-- node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)" output="screen" -->
+	<!-- param name="frame_id" value="map"/ -->
+    <!-- /node -->
+
+    <!-- AMCL -->
+    <include file="$(find turtlebot3_navigation)/launch/amcl_tb3_0.launch"/>
+
+    <!-- move_base -->
+    <include file="$(find turtlebot3_navigation)/launch/move_base_tb3_0.launch">
+      <arg name="model" value="$(arg model)" />
+      <arg name="move_forward_only" value="$(arg move_forward_only)"/>
+    </include>
+
+    <node name="global_costmap_node" pkg="costmap_2d" type="costmap_2d_node" output="screen">
+      <rosparam file="$(find turtlebot3_navigation)/param/share_costmap.yaml" command="load" ns="costmap" />
+    </node>
+
+    <node name="local_costmap_node" pkg="costmap_2d" type="costmap_2d_node" output="screen">
+      <rosparam file="$(find turtlebot3_navigation)/param/share_costmap_local.yaml" command="load" ns="costmap" />
+    </node>
+  </group>
+</launch>
