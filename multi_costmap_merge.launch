@@ -1,0 +1,52 @@
+<launch>
+  <arg name="first_tb3"  default="tb3_0"/>
+  <arg name="second_tb3" default="tb3_1"/>
+
+  <arg name="first_tb3_x_pos" default="-7.53"/>
+  <arg name="first_tb3_y_pos" default=" 3.26"/>
+  <arg name="first_tb3_z_pos" default=" 0.0"/>
+  <arg name="first_tb3_yaw"   default="-1.58"/>
+
+  <!-- arg name="first_tb3_x_pos" default=" 2.667"/ -->
+  <!-- arg name="first_tb3_y_pos" default="-7.267"/ -->
+  <!-- arg name="first_tb3_z_pos" default=" 0.0"/ -->
+  <!-- arg name="first_tb3_yaw"   default=" 0.809"/ -->
+
+  <arg name="second_tb3_x_pos" default="-7.54"/>
+  <arg name="second_tb3_y_pos" default=" 3.25"/>
+  <arg name="second_tb3_z_pos" default=" 0.0"/>
+  <arg name="second_tb3_yaw"   default="-1.58"/>
+
+  <group ns="$(arg first_tb3)/global_costmap_node/costmap/map_merge">
+    <param name="init_pose_x"   value="$(arg first_tb3_x_pos)"/>
+    <param name="init_pose_y"   value="$(arg first_tb3_y_pos)"/>
+    <param name="init_pose_z"   value="$(arg first_tb3_z_pos)"/>
+    <param name="init_pose_yaw" value="$(arg first_tb3_yaw)"  />
+  </group>
+
+  <group ns="$(arg second_tb3)/global_costmap_node/costmap/map_merge">
+    <param name="init_pose_x"   value="$(arg second_tb3_x_pos)"/>
+    <param name="init_pose_y"   value="$(arg second_tb3_y_pos)"/>
+    <param name="init_pose_z"   value="$(arg second_tb3_z_pos)"/>
+    <param name="init_pose_yaw" value="$(arg second_tb3_yaw)"  />
+  </group>
+
+  <node pkg="multirobot_map_merge" type="map_merge" respawn="false" name="map_merge" output="screen">
+    <param name="robot_map_topic" value="costmap"/>
+    <param name="robot_map_updates_topic" value="costmap_updates"/>
+    <param name="robot_namespace" value="global_costmap"/>
+    <param name="merged_map_topic" value="share_costmap"/>
+    <param name="world_frame" value="map"/>
+    <param name="known_init_poses" value="false"/>
+    <param name="merging_rate" value="0.25"/>
+    <param name="discovery_rate" value="0.05"/>
+    <param name="estimation_rate" value="0.1"/>
+    <param name="estimation_confidence" value="1.0"/>
+    <!-- remap from="map" to="tb3_1/map"/ -->
+  </node>
+
+  <node pkg="tf" type="static_transform_publisher" name="world_to_$(arg first_tb3)_tf_broadcaster"  args="0 0 0 0 0 0 /map /$(arg first_tb3)/map 100"/>
+  <node pkg="tf" type="static_transform_publisher" name="world_to_$(arg second_tb3)_tf_broadcaster" args="0 0 0 0 0 0 /map /$(arg second_tb3)/map 100"/>
+</launch>
+
+<!-- http://wiki.ros.org/multirobot_map_merge -->
