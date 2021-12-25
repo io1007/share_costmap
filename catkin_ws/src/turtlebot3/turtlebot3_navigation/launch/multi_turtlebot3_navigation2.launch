@@ -1,0 +1,30 @@
+<launch>
+
+  <!-- Arguments -->
+  <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
+  <arg name="map_file" default="$(env HOME)/my_map3.yaml"/>
+  <arg name="map_file2" default="$(env HOME)/share_costmap9.yaml"/>
+  <arg name="map_file3" default="$(env HOME)/map/map.yaml"/>
+  <arg name="open_rviz" default="false"/>
+  <arg name="move_forward_only" default="true"/>
+
+  <!-- Map server -->
+  <group ns="tb3_0">
+    <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)" output="screen">
+       <param name="frame_id" value="tb3_0/map" />
+       <!-- remap from="map" to="tb3_0/map"/ -->
+       <!-- remap from="map_metadata" to="tb3_0/map_metadata"/ -->
+       <!-- remap from="static_map" to="tb3_0/static_map"/ -->
+    </node>
+  </group>
+  <!-- Map server -->
+  <group ns="tb3_1">
+    <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)" output="screen">
+       <param name="frame_id" value="tb3_1/map" />
+       <!-- remap from="map" to="tb3_1/map"/ -->
+       <!-- remap from="map_metadata" to="tb3_1/map_metadata"/ -->
+       <!-- remap from="static_map" to="tb3_1/static_map"/ -->
+    </node>
+  </group>
+
+</launch>
